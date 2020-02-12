@@ -1,6 +1,6 @@
 //Created by: Jose Padilla
-//Created on: Some day
-//Description: This program runs the code for a lab game called the 99 trick.
+//Created on: 2/11/2020
+//Description: This program runs the code for mad libs and a calculator.
   
 package main
 
