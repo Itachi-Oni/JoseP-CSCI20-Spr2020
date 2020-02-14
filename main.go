@@ -1,53 +1,15 @@
 //Created by: Jose Padilla
-//Created on: 2/11/2020
-//Description: This program runs the code for mad libs and a calculator.
+//Created on: 2/13/2020
+//Description: This program accepts user input and converts it into Kelvin and Celsius from Farenheit.
   
 package main
-
 import "fmt"
-
 func main() {
-
-  var noun0 string
-  fmt.Print("Enter a noun: ")
-  fmt.Scan(&noun0)
-  fmt.Println(noun0)
-  
-   var adjective0 string
-  fmt.Print("Enter an adejective: ")
-  fmt.Scan(&adjective0)
-  fmt.Println(adjective0)
-
-   var noun1 string
-  fmt.Print("Enter a noun: ")
-  fmt.Scan(&noun1)
-  fmt.Println(noun1)
-
-   var location0 string
-  fmt.Print("Enter a location: ")
-  fmt.Scan(&location0)
-  fmt.Println(location0)
-
-   var adjective1 string
-  fmt.Print("Enter an adjective: ")
-  fmt.Scan(&adjective1)
-  fmt.Println(adjective1)
-
-  var noun2 string
-  fmt.Print("Enter a noun: ")
-  fmt.Scan(&noun2)
-  fmt.Println(noun2)
-
-  fmt.Print("There once was a ", noun0, " who had a ", adjective0," pet ", noun1,". ", "They went on an adventure to ", location0, ", to recover the ", adjective1," ", noun2,"." )
-
-  var num int
-  fmt.Print("Enter a number: ")
-  fmt.Scan(&num)
-  fmt.Println(num)
-
-  var ber int
-  fmt.Print("Enter another number: ")
-  fmt.Scan(&ber)
-  fmt.Println(ber)
-  fmt.Print(num, "+", ber, "=",num + ber, num, "-", ber, "=",num - ber, num, "*", ber, "=", num * ber, num, "/", ber, "=", num / ber)
+  var far float64
+  fmt.Println("This program is used to convert Farenheit into Celsius and Kelvin.")
+  fmt.Print("Please enter a temperature in Farenheit.")
+  fmt.Scan( &far)
+  kel := (far-32) * 5/9 + 273.15
+  cel := (far - 32) * 5/9
+  fmt.Print("Farenheit: ", far," Kelvin: ", kel, " Celsius: ", cel)
 }
