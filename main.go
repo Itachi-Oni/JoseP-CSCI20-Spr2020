@@ -1,20 +1,37 @@
-//Created by: Jose Padilla
-//Created on: 2/13/2020
-//Description: This program accepts user input and converts it into Kelvin and Celsius from Farenheit.
-  
+// Programmer name: Jose Padilla
+// Date completed:  2/18/2020
+// Description: 2.1.1 Lab Part 1
+
 package main
-import "fmt"
+
+import (
+    "fmt"
+    "math/rand"
+) //adding the ability to do random numbers
+
 func main() {
-  //Sets user input variable
-  var far float64
-  fmt.Println("This program is used to convert Farenheit into Celsius and Kelvin.")
-  fmt.Print("Please enter a temperature in Farenheit.")
-  //Scans for user input to assign to variable
-  fmt.Scan( &far)
-  //Converts Farenheit to Kelvin
-  kel := (far-32) * 5/9 + 273.15
-  //Converts Farenheit to Celsius
-  cel := (far - 32) * 5/9
-  //Prints the results
-  fmt.Print("Farenheit: ", far," Kelvin: ", kel, " Celsius: ", cel)
+    var count int
+
+    //ask the user to enter a max range for the guessing game and store that value in variable max.
+    fmt.Println("Enter a max range")
+    var max int
+    fmt.Scanln(&max)
+    //this next line creates a random number from 1 to that guess for the computer to know.  You can test this by printing out the variable computerGuess
+    var computerGuess = rand.Intn(max)
+   
+    //ask the user to enter a guess for the computer number
+  fmt.Println("Please guess the computers number")
+  
+  var userGuess int
+  fmt.Scanln(&userGuess)
+  for userGuess != computerGuess {
+    count++
+    
+  
+    fmt.Println("Wrong")
+    fmt.Println("Please try again")
+    fmt.Scanln(&userGuess)
+  }
+  fmt.Println("You got the answer in ", count, " try(ies).")
+ 
 }
