@@ -5,16 +5,37 @@
 package main
 import "fmt"
 func main() {
-  //Sets user input variable
-  var far float64
-  fmt.Println("This program is used to convert Farenheit into Celsius and Kelvin.")
-  fmt.Print("Please enter a temperature in Farenheit.")
-  //Scans for user input to assign to variable
-  fmt.Scan( &far)
-  //Converts Farenheit to Kelvin
-  kel := (far-32) * 5/9 + 273.15
-  //Converts Farenheit to Celsius
-  cel := (far - 32) * 5/9
-  //Prints the results
-  fmt.Print("Farenheit: ", far," Kelvin: ", kel, " Celsius: ", cel)
+ var x [4]int
+ var user0 int
+ var user1 int
+ var user2 int
+ var user3 int
+
+  fmt.Println("Please enter a single digit number. 1/4 ")
+  fmt.Scanln(&user0)
+  fmt.Println(user0)
+  x[0] = user0
+
+  fmt.Println("Please enter a single digit number. 2/4 ")
+  fmt.Scanln(&user1)
+  fmt.Println(user1)
+  x[1] = user1
+
+    fmt.Println("Please enter a single digit number. 3/4 ")
+  fmt.Scanln(&user2)
+  fmt.Println(user2)
+  x[2] = user2
+
+    fmt.Println("Please enter a single digit number. 4/4 ")
+  fmt.Scanln(&user3)
+  fmt.Println(user3)
+  x[3] = user3
+
+  fmt.Println(x)
+  added := user0 + user1 + user2 + user3
+  fmt.Println(added)
+for added <= 9 && added >= 1{
+  added = user0 + user1 + user2 + user3
+  fmt.Println(added)
+  }
 } 
