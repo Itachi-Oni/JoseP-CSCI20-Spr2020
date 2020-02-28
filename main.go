@@ -1,46 +1,79 @@
 // Programmer name: Jose Padilla
 // Date completed:  2/27/2020
-// Description: Rock Paper Scissors game-p1 vs cpu
+// Description: Paystub generator and updated w/ win conditionsRock Paper Scissors game
 
 package main
 
 import (
     "fmt"
-    "math/rand"
-    "time"
-) //adding the ability to do random numbers
+   "math/rand"
+   "time"
+)
+
 
 func main() {
+  //variable for wage
+  fmt.Println("Please enter your hourly wage.")
+  var wage float64
+  fmt.Scan(&wage)
+//variable for overtime wage
+  fmt.Print("Please enter your overtime wage.")
+  var overtime float64
+  fmt.Scan(&overtime)
+//variable for hours accrued
+  fmt.Print("Please enter the amount of hours you have worked.")
+  var hours float64
+  fmt.Scan(&hours)
+//subtracts 40 from hours if its greater than 40 to get overtime hours
+  var hoursOt float64
+    if hours > 40{
+    hoursOt = hours - 40  
+  }   else {
+    hoursOt = 0
+  }
+//payStub
+payStub := (((hours - hoursOt) * wage) + (hoursOt * overtime)) * 0.98
+fmt.Print("Your total pay after a 12% tax rate will be ",payStub)
 
+
+
+//begin updated rock paper scissors
   var user int 
   var cpu int
-    //create two variables - one for the computer and one for the user
-
+  //Seeding the random
   s1 := rand.NewSource(time.Now().UnixNano())
   r1 := rand.New(s1)
 
   cpu = r1.Intn(3)
 
-    //use a random integer value representing the computer's choice in a game of Rock, Scissors, Paper. 0=rock, 1=scissors, 2=paper
-
-  fmt.Println("Please enter 0 for rock, 1 for scissors or 2 for paper")
+  fmt.Println("Please enter 8 for rock, 13 for scissors or 18 for paper")
   fmt.Scanln(&user)
-    //prompt the user for an integer value representing the player's choice
-  if cpu == 0 {
-    fmt.Println("Computer chose rock")
-  } else if cpu == 1 {
-    fmt.Println("Computer chose scissors")
-  }else if cpu == 2 {
-    fmt.Println("Computer chose papers")
+ //cpu choice
+    switch cpu {
+    case 0: fmt.Println("Computer chose rock")
+    case 1: fmt.Println("Computer chose scissors")
+    case 2: fmt.Println("Computer chose papers")
+  }//user choice
+    switch user {
+    case 8: fmt.Println("You chose rock")
+    case 13: fmt.Println("You chose scissors")
+    case 18: fmt.Println("You chose papers")
   }
-  if user == 0 {
-    fmt.Println("you chose rock")
-  } else if user == 1 {
-    fmt.Println("you chose scissors")
-  }else if user == 2 {
-    fmt.Println("you chose papers")
-  }
-  
-    //Print out the values using the words rock, scissors, paper.  ie. "Computer chose rock and player chose paper"
-    //You will need to use decisions for this
+ //win conditions
+  win := cpu + user
+    switch win {
+      case 8: fmt.Println("You tie")//rock,rock
+      case 9: fmt.Println("You lose")//scissors,rock
+      case 10: fmt.Println("You lose")//paper,rock
+
+      case 13: fmt.Println("You lose")//rock,scissors
+      case 14: fmt.Println("You tie")//scissors,scissors
+      case 15: fmt.Println("You win")//paper,scissors
+
+      case 18: fmt.Println("You win")//rock,paper
+      case 19: fmt.Println("You lost")//scissors,paper
+      case 20: fmt.Println("You tie")//paper,paper
+
+    }
+    fmt.Println(win)
 }
