@@ -1,79 +1,32 @@
 // Programmer name: Jose Padilla
-// Date completed:  2/27/2020
-// Description: Paystub generator and updated w/ win conditionsRock Paper Scissors game
+// Date completed:  3/3/2020
+// Description: You Code It 2.5.1
 
 package main
 
-import (
-    "fmt"
-   "math/rand"
-   "time"
-)
-
+import "fmt"
 
 func main() {
-  //variable for wage
-  fmt.Println("Please enter your hourly wage.")
-  var wage float64
-  fmt.Scan(&wage)
-//variable for overtime wage
-  fmt.Print("Please enter your overtime wage.")
-  var overtime float64
-  fmt.Scan(&overtime)
-//variable for hours accrued
-  fmt.Print("Please enter the amount of hours you have worked.")
-  var hours float64
-  fmt.Scan(&hours)
-//subtracts 40 from hours if its greater than 40 to get overtime hours
-  var hoursOt float64
-    if hours > 40{
-    hoursOt = hours - 40  
-  }   else {
-    hoursOt = 0
-  }
-//payStub
-payStub := (((hours - hoursOt) * wage) + (hoursOt * overtime)) * 0.98
-fmt.Print("Your total pay after a 12% tax rate will be ",payStub)
+    //Create a string array of at least 5 values.  It should hold 5 products to buy
+    var products [5]string
+    products[0] = "Soda"
+    products[1] = "Chips"
+    products[2] = "Candy"
+    products[3] = "Ice Cream"
+    products[4] = "Cake"
 
+    fmt.Println(products)
 
+    //Create a float array of at least 5 values.  It should hold a price for each of the products
+var prices [5]float64
+    prices[0] = 1.50
+    prices[1] = 1.00
+    prices[2] = 0.99
+    prices[3] = 4.99
+    prices[4] = 9.99
 
-//begin updated rock paper scissors
-  var user int 
-  var cpu int
-  //Seeding the random
-  s1 := rand.NewSource(time.Now().UnixNano())
-  r1 := rand.New(s1)
+    fmt.Println(prices)
 
-  cpu = r1.Intn(3)
-
-  fmt.Println("Please enter 8 for rock, 13 for scissors or 18 for paper")
-  fmt.Scanln(&user)
- //cpu choice
-    switch cpu {
-    case 0: fmt.Println("Computer chose rock")
-    case 1: fmt.Println("Computer chose scissors")
-    case 2: fmt.Println("Computer chose papers")
-  }//user choice
-    switch user {
-    case 8: fmt.Println("You chose rock")
-    case 13: fmt.Println("You chose scissors")
-    case 18: fmt.Println("You chose papers")
-  }
- //win conditions
-  win := cpu + user
-    switch win {
-      case 8: fmt.Println("You tie")//rock,rock
-      case 9: fmt.Println("You lose")//scissors,rock
-      case 10: fmt.Println("You lose")//paper,rock
-
-      case 13: fmt.Println("You lose")//rock,scissors
-      case 14: fmt.Println("You tie")//scissors,scissors
-      case 15: fmt.Println("You win")//paper,scissors
-
-      case 18: fmt.Println("You win")//rock,paper
-      case 19: fmt.Println("You lost")//scissors,paper
-      case 20: fmt.Println("You tie")//paper,paper
-
-    }
-    fmt.Println(win)
+    //Iterate through the array and output the product and it's price (similar to a menu)
+    fmt.Println(products[0],prices[0],products[1],prices[1],products[2],prices[2],products[3],prices[3],products[4],prices[4],)
 }
