@@ -1,6 +1,6 @@
 // Programmer name: Jose Padilla
-// Date completed:  3/3/2020
-// Description: You Code It 2.5.1
+// Date completed:  3/5/2020
+// Description: Attempt 1 for Tic Tac Toe and for the value counter
 
 package main
 import ("fmt" 
@@ -8,25 +8,6 @@ import ("fmt"
 "time"
 ) 
 func main() {
-
-s1 := rand.NewSource(time.Now().UnixNano())
-r1 := rand.New(s1)
-
-varcount := make([]int, 50)
-    
-
-
-for i := 0; i < 50 ; i++{
-   varcount[i] = r1.Intn(20)}
-   fmt.Println(varcount)
-
-}
-
-
-
-
-}
-
 
 //--------------------------------------
 //set variables and the o's to fill them  
@@ -49,7 +30,7 @@ fmt.Println(line3)
 
 var change string
 //give the user 8 triesw to fill up the entire board
-  for i := 0; i <= 1; i++{
+  for i := 1; i <= 9; i++{
     fmt.Println("To change a space on the board please enter a, b, or c for the row followed by the number 1, 2, or 3 for the column.")
     fmt.Scan(&change)
     //changes based on user input
@@ -68,3 +49,24 @@ var change string
     fmt.Println(line1)
     fmt.Println(line2)
     fmt.Println(line3)  
+
+//--------------------------------------
+
+s1 := rand.NewSource(time.Now().UnixNano())
+r1 := rand.New(s1)
+
+//varcount := make(map[int]int)
+//varcount[1] = 0
+//fmt.Println(varcount[1])
+
+varcount := make([]int, 50)
+    
+
+
+for i := 1; i <= 50 ; i++{
+   varcount[i] = r1.Intn(20)}
+   fmt.Println(varcount)
+
+
+
+}
